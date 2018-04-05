@@ -1,0 +1,8 @@
+{"SubscriptionName" : "Pay-As-You-Go",
+"ResourceGroupName":"cloud-shell-storage-eastus",
+"StorageAccountName" : "cs2e54a0eae560ax451fxb66" ,
+"StorageAccountKey" : "9eTBu6SFwto8/Z5a2fgEPVJqQ9pBQgutotiyXYWiIVJKK3tefWR5aR1l96yWY95bAQRDEt8NJbGaFMGOTWyy9g==",
+"SrcContainerName" : "smart",
+"DestContainerName" : "maha",
+"SrcBlobName" : "QueryResult.txt"
+}

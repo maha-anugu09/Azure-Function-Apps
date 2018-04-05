@@ -1,0 +1,26 @@
+$Content = Get-Content $req | ConvertFrom-Json
+
+$SubscriptionName=$Content.Subscription
+$ResourceGroupName=$Content.ResourceGroupName
+$StorageAccountName =$Content.StorageAccountName 
+$StorageAccountKey = $Content.StorageAccountKey
+$SrcContainerName = $Content.SrcContainerName
+$DestContainerName = $Content.DestContainerName
+$SrcBlobName = $Content.SrcBlobName
+$DestBlobName = "CopyOf_" + $SrcBlobName 
+
+$ctx = New-AzureStorageContext -StorageAccountName $StorageAccountName -StorageAccountKey $StorageAccountKey
+
+# Copy a blob from one container to another
+Start-AzureStorageBlobCopy -SrcBlob $SrcBlobName -SrcContainer $SrcContainerName -DestContainer $DestContainerName -DestBlob $DestBlobName -Context $ctx
+
+# List all blobs in a container.
+Get-AzureStorageBlob -Container $DestContainerName -context $ctx
+
+
+
+
+
+
+
+
